@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="wrap_content"
+        android:layout_height="600dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-120dp"
+                android:src="@drawable/mondai1" />
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/timestart_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="スタート"
+            android:textSize="50dp"
+            android:layout_toEndOf="@+id/count_text"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="20dp"
+            android:layout_alignBottom="@+id/timestop_button" />
+
+        <Button
+            android:id="@+id/timestop_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="50dp"
+            android:text="終了"
+            android:textSize="50dp"
+            android:layout_marginEnd="82dp"
+            android:layout_below="@+id/count_text"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="23dp"/>
+
+        <TextView
+            android:id="@+id/count_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="40dp" />
+
+    </RelativeLayout>
+
+</LinearLayout>
