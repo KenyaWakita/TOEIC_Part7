@@ -8,9 +8,7 @@
 
     <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp">
-
+        android:layout_height="wrap_content">
 
         <TableRow
             android:id="@+id/tableRow1"
@@ -18,24 +16,26 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="60dp">
 
-            <ImageView
-                android:layout_width="170dp"
-                android:layout_height="120dp"
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:id="@+id/topic1"
-                android:src="@drawable/unsolved_blue_1" />
+                android:background="@drawable/unsolved_blue_1"
+                android:layout_marginStart="50dp"/>
 
-            <ImageView
-                android:layout_width="170dp"
-                android:layout_height="120dp"
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:id="@+id/topic2"
-                android:src="@drawable/unsolved_blue_2" />
+                android:background="@drawable/unsolved_blue_2"
+                android:layout_marginStart="50dp"/>
 
-            <ImageView
-                android:layout_width="170dp"
-                android:layout_height="120dp"
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:id="@+id/topic3"
-                android:src="@drawable/unsolved_blue_3" />
-
+                android:background="@drawable/unsolved_blue_3"
+                android:layout_marginStart="50dp"/>
         </TableRow>
 
         <TableRow
@@ -44,23 +44,26 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="60dp">
 
-            <ImageView
-                android:layout_width="170dp"
-                android:layout_height="120dp"
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:id="@+id/topic4"
-                android:src="@drawable/unsolved_blue_4" />
+                android:background="@drawable/unsolved_blue_4"
+                android:layout_marginStart="50dp"/>
 
-            <ImageView
-                android:layout_width="170dp"
-                android:layout_height="120dp"
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:id="@+id/topic5"
-                android:src="@drawable/unsolved_blue_5" />
+                android:background="@drawable/unsolved_blue_5"
+                android:layout_marginStart="50dp"/>
 
-            <ImageView
-                android:layout_width="170dp"
-                android:layout_height="120dp"
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:id="@+id/topic6"
-                android:src="@drawable/unsolved_blue_6" />
+                android:background="@drawable/unsolved_blue_6"
+                android:layout_marginStart="50dp"/>
 
         </TableRow>
 
@@ -70,23 +73,26 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="60dp">
 
-            <ImageView
-                android:layout_width="170dp"
-                android:layout_height="120dp"
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:id="@+id/topic7"
-                android:src="@drawable/unsolved_blue_7" />
+                android:background="@drawable/unsolved_blue_7"
+                android:layout_marginStart="50dp"/>
 
-            <ImageView
-                android:layout_width="170dp"
-                android:layout_height="120dp"
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:id="@+id/topic8"
-                android:src="@drawable/unsolved_blue_8" />
+                android:background="@drawable/unsolved_blue_8"
+                android:layout_marginStart="50dp"/>
 
-            <ImageView
-                android:layout_width="170dp"
-                android:layout_height="120dp"
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:id="@+id/topic9"
-                android:src="@drawable/unsolved_blue_9" />
+                android:background="@drawable/unsolved_blue_9"
+                android:layout_marginStart="50dp"/>
 
         </TableRow>
 
