@@ -21,7 +21,7 @@ public class Result_Activity extends AppCompatActivity {
 
         //インテントでかかった時間の受け取り
         Intent i = getIntent();
-        String time = i.getStringExtra("time");
+        String time = i.getStringExtra("words/minute");
         countText.setText("結果は" +time+ "秒かかりました" );
 
     }

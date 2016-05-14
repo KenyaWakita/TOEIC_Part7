@@ -31,7 +31,6 @@ public class Select_Topic_Activity extends AppCompatActivity implements View.OnC
         Button topic4 = (Button)findViewById(R.id.topic4);
         topic4.setOnClickListener(this);
 
-
     }
 
     @Override

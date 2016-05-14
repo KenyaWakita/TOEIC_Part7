@@ -16,8 +16,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -30,6 +32,8 @@ public class Quiz_Activity extends AppCompatActivity {
     private int count = 0;						//カウント
     private Handler mHandler = new Handler();   //UI Threadへのpost用ハンドラ
     String filename;
+    int word_count = 0;                         //文字数
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,10 +46,50 @@ public class Quiz_Activity extends AppCompatActivity {
 
         final Button timestart_button = (Button)findViewById(R.id.timestart_button);
         Button timestop_button = (Button)findViewById(R.id.timestop_button);
-        ImageView quiz_view = (ImageView)findViewById(R.id.quiz_view);
-        //assetsフォルダから問題文画像を取得する
-        Bitmap bitmapDrawable = Filename_To_BitmapDrawable(filename, this);
-        quiz_view.setImageBitmap(bitmapDrawable);
+//        ImageView quiz_view = (ImageView)findViewById(R.id.quiz_view);
+//        //assetsフォルダから問題文画像を取得する
+//        Bitmap bitmapDrawable = Filename_To_BitmapDrawable(filename, this);
+//        quiz_view.setImageBitmap(bitmapDrawable);
+
+        TextView quiz_text = (TextView)findViewById(R.id.quiz_text);
+
+        InputStream is = null;
+        BufferedReader br = null;
+        String text = "";
+
+        try {
+            try {
+                // assetsフォルダ内の sample.txt をオープンする
+                is = this.getAssets().open("quiz1.txt");
+                br = new BufferedReader(new InputStreamReader(is));
+
+                // １行ずつ読み込み、改行を付加する
+                String str;
+                while ((str = br.readLine()) != null) {
+                    text += str + "\n" +"\n" +"　";
+                }
+            } finally {
+                if (is != null) is.close();
+                if (br != null) br.close();
+            }
+        } catch (Exception e){
+            // エラー発生時の処理
+        }
+
+        // 読み込んだ文字列を Textview に設定し、画面に表示する
+        quiz_text.setText(text);
+        //word数を計算する．結果を変数countに代入
+        int s = 0;
+        while(s < text.length()){
+            char one = text.charAt(s);
+            if(one == ' '||one=='　') {
+                word_count++;
+            }
+            s++;
+        }
+
+        Log.d("count", String.valueOf(word_count));
+
 
         timestart_button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
@@ -68,7 +112,13 @@ public class Quiz_Activity extends AppCompatActivity {
             public void onClick(View v){
                 // ここに処理を記述する
                 Intent intent = new Intent(Quiz_Activity.this, Result_Activity.class);
-                intent.putExtra("time",countText.getText().toString());
+                double w_m = 60*word_count/(Integer.parseInt(countText.getText().toString()));
+
+                Log.d("time", String.valueOf((Integer.parseInt(countText.getText().toString()))));
+                Log.d("word_count", String.valueOf(word_count));
+                Log.d("wm", String.valueOf(w_m));
+
+                intent.putExtra("words/minute",String.valueOf(w_m));
                 startActivityForResult(intent, 0);
                 Quiz_Activity.this.finish();
             }
